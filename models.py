@@ -100,7 +100,6 @@ class Doctor(db.Model):
     bio = db.Column(db.Text)
     consultation_fee = db.Column(db.Numeric(10,2), default=0.00)
     average_rating = db.Column(db.Numeric(3,2), default=0.00)
-    title = db.Column(db.String(100), default='Bác sĩ')
 
     hospital = db.relationship('Hospital', backref='doctors')
     specialty = db.relationship('Specialty', backref='doctor')
@@ -141,7 +140,6 @@ class Appointment(BaseModel):
     reason = db.Column(db.Text)
     status = db.Column(db.Enum(AppointmentStatus), default=AppointmentStatus.Scheduled)
     consultation_type = db.Column(db.Enum(ConsultationType), default=ConsultationType.Offline)
-    video_call_link = db.Column(db.String(255))
     cancellation_reason = db.Column(db.Text)
 
     invoice = db.relationship('Invoice', backref='appointment', uselist=False)
