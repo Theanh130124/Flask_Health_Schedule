@@ -140,7 +140,6 @@ class Appointment(BaseModel):
     reason = db.Column(db.Text)
     status = db.Column(db.Enum(AppointmentStatus), default=AppointmentStatus.Scheduled)
     consultation_type = db.Column(db.Enum(ConsultationType), default=ConsultationType.Offline)
-    video_call_link = db.Column(db.String(255))
     cancellation_reason = db.Column(db.Text)
 
     invoice = db.relationship('Invoice', backref='appointment', uselist=False)
