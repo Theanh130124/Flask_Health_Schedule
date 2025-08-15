@@ -100,7 +100,6 @@ class Doctor(db.Model):
     bio = db.Column(db.Text)
     consultation_fee = db.Column(db.Numeric(10,2), default=0.00)
     average_rating = db.Column(db.Numeric(3,2), default=0.00)
-    title = db.Column(db.String(100), default='Bác sĩ')
 
     hospital = db.relationship('Hospital', backref='doctors')
     specialty = db.relationship('Specialty', backref='doctor')
