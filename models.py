@@ -1,8 +1,7 @@
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 import enum
-
-db = SQLAlchemy()
+from . import db
 
 #Xem ràng buộc thêm dữ liệu
 
